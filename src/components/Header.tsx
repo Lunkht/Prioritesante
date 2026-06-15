@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-      <div className="container">
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-3 flex-shrink-0">
@@ -75,15 +75,16 @@ export default function Header() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="bg-primary text-white px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-red-700 active:scale-95 shadow-sm"
+              className="bg-primary text-white px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-red-700 active:scale-95 shadow-sm cursor-pointer"
             >
               Prendre RDV
-            </bu
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 hover:bg-white/10 rounded-md transition-colors"
+            className="md:hidden p-2 hover:bg-gray-100 rounded-md transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -93,26 +94,30 @@ export default function Header() {
             )}
           </button>
         </div>
+
         {/* Mobile Menu */}
-        {isMenuOpen && (der-t border-border bg-white animate-slideInUp">
+        {isMenuOpen && (
+          <nav className="md:hidden border-t border-border bg-white pb-6 animate-in slide-in-from-top duration-300">
             <div className="flex flex-col gap-4 pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm font-medium text-mut
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 px-4 py-2"
+                >
                   {item.label}
                 </a>
               ))}
               <button
                 onClick={() => {
-                  const element = document.querySelector('#appo
+                  const element = document.querySelector('#appointment');
+                  if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
                   setIsMenuOpen(false);
                 }}
-                className="bg-primary text-white mx-4 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-red-700 active:scale-95"
+                className="bg-primary text-white mx-4 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-red-700 active:scale-95 cursor-pointer"
               >
                 Prendre RDV
               </button>
