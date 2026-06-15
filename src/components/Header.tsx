@@ -36,7 +36,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-border">
+    <header className="sticky top-0 z-50 bg-primary">
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -47,8 +47,8 @@ export default function Header() {
               className="w-10 h-10"
             />
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground">Priorité</span>
-              <span className="text-xs font-semibold text-primary">Santé</span>
+              <span className="text-lg font-bold text-white">Priorité</span>
+              <span className="text-xs font-semibold text-white/80">Santé</span>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
+                className="text-sm font-medium text-white/90 hover:text-white transition-colors duration-200"
               >
                 {item.label}
               </a>
@@ -75,7 +75,7 @@ export default function Header() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="btn-primary"
+              className="bg-white text-primary px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-gray-100 active:scale-95"
             >
               Prendre RDV
             </button>
@@ -84,27 +84,27 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 hover:bg-muted rounded-md transition-colors"
+            className="md:hidden p-2 hover:bg-white/10 rounded-md transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4 border-t border-border animate-slideInUp">
+          <nav className="md:hidden pb-4 border-t border-white/20 animate-slideInUp">
             <div className="flex flex-col gap-4 pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 px-4 py-2"
+                  className="text-sm font-medium text-white/90 hover:text-white transition-colors duration-200 px-4 py-2"
                 >
                   {item.label}
                 </a>
@@ -117,7 +117,7 @@ export default function Header() {
                   }
                   setIsMenuOpen(false);
                 }}
-                className="btn-primary mx-4"
+                className="bg-white text-primary mx-4 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-gray-100 active:scale-95"
               >
                 Prendre RDV
               </button>
