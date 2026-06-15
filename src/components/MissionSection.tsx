@@ -91,17 +91,6 @@ export default function MissionSection() {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
-              <div>
-                <p className="text-2xl font-bold text-primary">Dr. Bérété Alpha</p>
-                <p className="text-sm text-muted-foreground">Directeur Médical</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-primary">24/7</p>
-                <p className="text-sm text-muted-foreground">Service d'urgence</p>
-              </div>
-            </div>
           </div>
 
           {/* Right Donation Form */}

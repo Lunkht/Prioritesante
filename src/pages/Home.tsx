@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
 import ImpactSection from '@/components/ImpactSection';
 import ServicesSection from '@/components/ServicesSection';
 import MissionSection from '@/components/MissionSection';
@@ -29,6 +30,9 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section - Impact visuel immédiat */}
         <HeroSection />
+
+        {/* About Section - Présentation */}
+        <AboutSection />
 
         {/* Services Section - Grille de services */}
         <ServicesSection />
