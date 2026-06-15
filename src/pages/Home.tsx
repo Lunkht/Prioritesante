@@ -36,14 +36,14 @@ export default function Home() {
         {/* About Section - Présentation */}
         <AboutSection />
 
+        {/* Services Section - Grille de services */}
+        <ServicesSection />
+
         {/* Practical Info - Pratique */}
         <PracticalSection />
 
         {/* Practitioners Section - Nos praticiens */}
         <PractitionersSection />
-
-        {/* Services Section - Grille de services */}
-        <ServicesSection />
 
         {/* Clinics Section - Liste des cliniques en Guinée */}
         <ClinicsSection />
