@@ -11,6 +11,7 @@ import {
   Activity,
   User
 } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 /**
  * Services Section - Minimalisme Médical Moderne
@@ -110,22 +111,20 @@ export default function ServicesSection() {
     <section id="services" className="section-spacing bg-white">
       <div className="container">
         <div className="flex flex-col gap-16">
-          <div className="flex flex-col gap-4 max-w-2xl animate-slideInUp">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Nos Services Médicaux
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Une gamme complète de services médicaux pour répondre à tous vos besoins de santé.
-            </p>
-          </div>
+          <ScrollReveal animation="animate-slideInUp">
+            <div className="flex flex-col gap-4 max-w-2xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Nos Services Médicaux
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Une gamme complète de services médicaux pour répondre à tous vos besoins de santé.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service, index) => (
-              <div
-                key={service.id}
-                style={{ animationDelay: `${index * 0.1}s` }}
-                className="animate-slideInUp"
-              >
+              <ScrollReveal key={service.id} animation="animate-slideInUp" delay={index * 0.1}>
                 <div className="service-card group hover-lift">
                   {/* Icon */}
                   <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-lg mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 hover-scale">
@@ -157,62 +156,60 @@ export default function ServicesSection() {
                     En savoir plus
                   </button>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="flex flex-col gap-8 animate-slideInUp">
-            <div className="flex flex-col gap-4">
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-                Services Additionnels
-              </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Nous proposons également une gamme complète de services de soutien pour compléter votre parcours médical.
-              </p>
-            </div>
+          <ScrollReveal animation="animate-slideInUp">
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  Services Additionnels
+                </h3>
+                <p className="text-lg text-muted-foreground max-w-2xl">
+                  Nous proposons également une gamme complète de services de soutien pour compléter votre parcours médical.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {ADDITIONAL_SERVICES.map((service, index) => (
-                <div
-                  key={service.id}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                  className="animate-slideInUp"
-                >
-                  <div className="service-card group hover-lift">
-                    {/* Icon */}
-                    <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-lg mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 hover-scale">
-                      <div className="text-primary group-hover:text-white transition-colors duration-300">
-                        {service.icon}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {ADDITIONAL_SERVICES.map((service, index) => (
+                  <ScrollReveal key={service.id} animation="animate-slideInUp" delay={index * 0.1}>
+                     <div className="service-card group hover-lift">
+                        {/* Icon */}
+                        <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-lg mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 hover-scale">
+                          <div className="text-primary group-hover:text-white transition-colors duration-300">
+                            {service.icon}
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <h4 className="text-lg font-bold text-foreground mb-2">
+                          {service.title}
+                        </h4>
+                        <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                          {service.description}
+                        </p>
+
+                        {/* Details */}
+                        <ul className="space-y-2">
+                          {service.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* CTA */}
+                        <button className="mt-6 w-full py-2 px-4 border border-primary text-primary rounded-md text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover-scale">
+                          En savoir plus
+                        </button>
                       </div>
-                    </div>
-
-                    {/* Content */}
-                    <h4 className="text-lg font-bold text-foreground mb-2">
-                      {service.title}
-                    </h4>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Details */}
-                    <ul className="space-y-2">
-                      {service.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* CTA */}
-                    <button className="mt-6 w-full py-2 px-4 border border-primary text-primary rounded-md text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover-scale">
-                      En savoir plus
-                    </button>
-                  </div>
-                </div>
-              ))}
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

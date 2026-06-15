@@ -1,36 +1,27 @@
-import { type ReactNode } from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { cn } from '../lib/utils';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 interface ScrollRevealProps {
-  children: ReactNode;
-  className?: string;
-  animation?: 'slideInUp' | 'slideInDown' | 'slideInLeft' | 'slideInRight' | 'fadeIn' | 'scaleIn';
+  children: React.ReactNode;
+  animation?: string;
   delay?: number;
-  duration?: number;
+  className?: string;
+  threshold?: number;
 }
 
 export default function ScrollReveal({
   children,
-  className,
-  animation = 'slideInUp',
+  animation = 'animate-slideInUp',
   delay = 0,
-  duration = 0.6,
+  className = '',
+  threshold = 0.1,
 }: ScrollRevealProps) {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isRevealed } = useScrollReveal(threshold);
 
   return (
     <div
       ref={ref}
-      className={cn(
-        'opacity-0',
-        isVisible && `animate-${animation}`,
-        className
-      )}
-      style={{
-        animationDelay: `${delay}s`,
-        animationDuration: `${duration}s`,
-      }}
+      className={`${isRevealed ? animation : 'opacity-0'} ${className}`}
+      style={delay > 0 ? { animationDelay: `${delay}s` } : undefined}
     >
       {children}
     </div>
