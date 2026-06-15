@@ -11,6 +11,7 @@ import {
   Activity,
   User
 } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 /**
  * Services Section - Minimalisme Médical Moderne
@@ -110,22 +111,18 @@ export default function ServicesSection() {
     <section id="services" className="section-spacing bg-white">
       <div className="container">
         <div className="flex flex-col gap-16">
-          <div className="flex flex-col gap-4 max-w-2xl animate-slideInUp">
+          <ScrollReveal className="flex flex-col gap-4 max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Nos Services Médicaux
             </h2>
             <p className="text-lg text-muted-foreground">
               Une gamme complète de services médicaux pour répondre à tous vos besoins de santé.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service, index) => (
-              <div
-                key={service.id}
-                style={{ animationDelay: `${index * 0.1}s` }}
-                className="animate-slideInUp"
-              >
+              <ScrollReveal key={service.id} delay={index * 0.1}>
                 <div className="service-card group hover-lift">
                   {/* Icon */}
                   <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-lg mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 hover-scale">
@@ -157,11 +154,11 @@ export default function ServicesSection() {
                     En savoir plus
                   </button>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="flex flex-col gap-8 animate-slideInUp">
+          <ScrollReveal className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground">
                 Services Additionnels
@@ -173,11 +170,7 @@ export default function ServicesSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {ADDITIONAL_SERVICES.map((service, index) => (
-                <div
-                  key={service.id}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                  className="animate-slideInUp"
-                >
+                <ScrollReveal key={service.id} delay={index * 0.1}>
                   <div className="service-card group hover-lift">
                     {/* Icon */}
                     <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-lg mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 hover-scale">
@@ -209,10 +202,10 @@ export default function ServicesSection() {
                       En savoir plus
                     </button>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Heart, Users, Target } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 /**
  * Mission & Donation Section - Minimalisme Médical Moderne
@@ -36,7 +37,7 @@ export default function MissionSection() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="flex flex-col gap-8 animate-slideInUp hover-lift">
+          <ScrollReveal className="flex flex-col gap-8 hover-lift">
             <div className="flex flex-col gap-4">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Notre Mission Solidaire
@@ -102,10 +103,10 @@ export default function MissionSection() {
                 <p className="text-sm text-muted-foreground">Service d'urgence</p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Donation Form */}
-          <div className="flex flex-col gap-8 animate-scaleIn" style={{ animationDelay: '0.2s' }}>
+          <ScrollReveal animation="scaleIn" delay={0.2} className="flex flex-col gap-8">
             {/* Image */}
             <div className="relative rounded-lg overflow-hidden h-64 md:h-80 border border-border">
               <img
@@ -202,7 +203,7 @@ export default function MissionSection() {
                 </p>
               </form>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
