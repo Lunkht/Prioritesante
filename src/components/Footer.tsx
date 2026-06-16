@@ -178,14 +178,14 @@ export default function Footer() {
       {/* Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 hover:opacity-100 pointer-events-none hover:pointer-events-auto"
+        className="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary to-red-700 text-white rounded-2xl flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
         style={{
           opacity: typeof window !== 'undefined' && window.scrollY > 300 ? 1 : 0,
           pointerEvents: typeof window !== 'undefined' && window.scrollY > 300 ? 'auto' : 'none',
         }}
         aria-label="Retour au haut"
       >
-        ↑
+        <span className="text-xl">↑</span>
       </button>
     </footer>
   );

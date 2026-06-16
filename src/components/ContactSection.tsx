@@ -66,7 +66,9 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="section-spacing bg-white">
+    <section id="contact" className="section-spacing section-warm relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72 bg-red-50 rounded-full -translate-x-1/3 -translate-y-1/3 blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-50 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl opacity-30 pointer-events-none" />
       <div className="container">
         <div className="flex flex-col gap-16">
           {/* Section Header */}
@@ -86,7 +88,7 @@ export default function ContactSection() {
             {contactInfo.map((info, index) => (
               <ScrollReveal key={info.title} animation="animate-slideInUp" delay={index * 0.1}>
                 <div
-                  className="flex flex-col gap-3 p-6 bg-gray-50 rounded-lg border border-border hover:border-primary transition-all duration-300 hover-lift"
+                  className="flex flex-col gap-3 p-6 bg-white rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm"
                 >
                   <div className="text-primary hover-scale transition-all duration-300">{info.icon}</div>
                   <h3 className="font-semibold text-foreground">{info.title}</h3>
@@ -101,7 +103,7 @@ export default function ContactSection() {
             {/* Contact Form */}
             <ScrollReveal animation="animate-slideInUp">
               <div className="hover-lift">
-                <div id="appointment" className="bg-white border border-border rounded-lg p-8">
+                <div id="appointment" className="bg-white border border-border/50 rounded-2xl p-8 shadow-lg">
                   <h3 className="text-2xl font-bold text-foreground mb-2">Prendre Rendez-vous</h3>
                   <p className="text-muted-foreground mb-6">
                     Remplissez le formulaire ci-dessous et nous vous recontacterons rapidement.
@@ -185,13 +187,13 @@ export default function ContactSection() {
 
                     <button
                       type="submit"
-                      className="btn-primary w-full py-3 font-semibold transition-all duration-300"
+                      className="btn-primary w-full py-3 font-semibold transition-all duration-300 hover:shadow-lg"
                     >
                       Envoyer le message
                     </button>
 
                     {isSubmitted && (
-                      <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm font-medium animate-slideInUp">
+                      <div className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium animate-slideInUp shadow-sm">
                         ✓ Message envoyé avec succès ! Nous vous recontacterons bientôt.
                       </div>
                     )}
@@ -204,8 +206,8 @@ export default function ContactSection() {
             <ScrollReveal animation="animate-scaleIn" delay={0.2}>
               <div className="flex flex-col gap-6">
                 {/* Emergency Info */}
-                <div className="bg-red-50 rounded-lg p-6 border border-border">
-                  <h4 className="font-bold text-foreground mb-2 flex items-center gap-2 text-primary">
+                <div className="bg-gradient-to-br from-red-50 to-red-100/50 rounded-2xl p-6 border border-red-100 shadow-md">
+                  <h4 className="font-bold mb-3 flex items-center gap-2 text-primary">
                     <Phone className="w-5 h-5" />
                     Urgences 24/7
                   </h4>
@@ -216,7 +218,7 @@ export default function ContactSection() {
                 </div>
 
                 {/* Opening Hours */}
-                <div className="bg-white border border-border rounded-lg p-6">
+                <div className="bg-white border border-border/50 rounded-2xl p-6 shadow-md">
                   <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
                     <Clock className="w-5 h-5 text-primary" />
                     Horaires d'ouverture
@@ -244,7 +246,7 @@ export default function ContactSection() {
                 </div>
 
                 {/* Mini Map */}
-                <div className="w-full h-48 md:h-56 rounded-lg border border-border overflow-hidden">
+                <div className="w-full h-48 md:h-56 rounded-2xl border border-border/50 overflow-hidden shadow-md">
                   <ClinicsMap selectedClinic={null} onClinicSelect={() => {}} />
                 </div>
               </div>

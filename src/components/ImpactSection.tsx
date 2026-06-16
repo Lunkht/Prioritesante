@@ -58,12 +58,13 @@ function AnimatedCounter({ value, label, suffix }: Counter) {
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center gap-3 p-8 bg-white rounded-lg border border-border"
+      className="flex flex-col items-center gap-3 p-8 bg-white rounded-2xl border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
     >
       <div className="flex items-baseline gap-1">
         <span className="counter-value">{displayValue.toLocaleString('fr-FR')}</span>
         <span className="text-2xl font-bold text-primary">{suffix}</span>
       </div>
+      <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent rounded-full" />
       <p className="text-sm md:text-base text-muted-foreground text-center font-medium">{label}</p>
     </div>
   );
@@ -92,7 +93,9 @@ export default function ImpactSection() {
   ];
 
   return (
-    <section className="section-spacing bg-gradient-to-b from-white to-gray-50">
+    <section className="section-spacing bg-gradient-to-b from-red-50/10 via-white to-red-50/5 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-red-100/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-red-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
       <div className="container">
         <div className="flex flex-col items-center gap-12">
           {/* Section Header */}
@@ -125,21 +128,27 @@ export default function ImpactSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full pt-8">
             <ScrollReveal animation="animate-slideInUp" delay={0.1}>
               <div className="flex flex-col gap-3 text-center items-center">
-                <Heart className="w-8 h-8 text-primary" />
+                <div className="w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center shadow-sm">
+                  <Heart className="w-7 h-7 text-primary" />
+                </div>
                 <p className="text-sm font-semibold text-primary">ENGAGEMENT</p>
                 <p className="text-muted-foreground">Soins gratuits ou à faible coût pour les plus démunis</p>
               </div>
             </ScrollReveal>
             <ScrollReveal animation="animate-slideInUp" delay={0.2}>
               <div className="flex flex-col gap-3 text-center items-center">
-                <Stethoscope className="w-8 h-8 text-primary" />
+                <div className="w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center shadow-sm">
+                  <Stethoscope className="w-7 h-7 text-primary" />
+                </div>
                 <p className="text-sm font-semibold text-primary">QUALITÉ</p>
                 <p className="text-muted-foreground">Équipe médicale qualifiée et équipements modernes</p>
               </div>
             </ScrollReveal>
             <ScrollReveal animation="animate-slideInUp" delay={0.3}>
               <div className="flex flex-col gap-3 text-center items-center">
-                <Clock className="w-8 h-8 text-primary" />
+                <div className="w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center shadow-sm">
+                  <Clock className="w-7 h-7 text-primary" />
+                </div>
                 <p className="text-sm font-semibold text-primary">ACCESSIBILITÉ</p>
                 <p className="text-muted-foreground">Disponible 24h/24, 7j/7 pour les urgences</p>
               </div>

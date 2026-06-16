@@ -24,7 +24,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-red-50/5 to-white">
       {/* Header - Navigation sticky */}
       <Header />
 

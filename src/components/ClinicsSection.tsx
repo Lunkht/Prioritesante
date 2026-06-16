@@ -59,7 +59,8 @@ export default function ClinicsSection() {
   }, [searchQuery, filterRegion]);
 
   return (
-    <section id="clinics" className="section-spacing bg-white">
+    <section id="clinics" className="section-spacing bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-red-50 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-30 pointer-events-none" />
       <div className="container">
         {/* Section Header */}
         <ScrollReveal animation="animate-slideInUp">
@@ -84,7 +85,7 @@ export default function ClinicsSection() {
                 placeholder="Rechercher par nom, ville ou adresse..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                className="w-full pl-12 pr-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 shadow-sm bg-white"
               />
             </div>
           </ScrollReveal>
@@ -94,7 +95,7 @@ export default function ClinicsSection() {
             <select
               value={filterRegion}
               onChange={(e) => setFilterRegion(e.target.value)}
-              className="px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 bg-white cursor-pointer"
+              className="px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 bg-white cursor-pointer shadow-sm"
             >
               <option value="all">Toutes les régions</option>
               {regions.map(region => (
@@ -174,13 +175,13 @@ export default function ClinicsSection() {
                       {clinic.services.slice(0, 3).map((service, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-red-50 text-primary text-xs rounded-full font-medium"
+                          className="badge"
                         >
                           {service}
                         </span>
                       ))}
                       {clinic.services.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 text-muted-foreground text-xs rounded-full font-medium">
+                        <span className="px-2 py-1 bg-gray-100 text-muted-foreground text-xs rounded-full font-medium border border-gray-200">
                           +{clinic.services.length - 3}
                         </span>
                       )}
@@ -188,7 +189,7 @@ export default function ClinicsSection() {
                   </div>
 
                   {/* CTA */}
-                  <button className="w-full py-1.5 px-3 border border-primary text-primary rounded-md text-xs font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover-scale">
+                  <button className="w-full py-2 px-3 border-2 border-primary/20 text-primary rounded-lg text-xs font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 hover:shadow-md">
                     Voir sur la carte
                   </button>
                 </div>

@@ -3,7 +3,9 @@ import ScrollReveal from './ScrollReveal';
 
 export default function AboutSection() {
   return (
-    <section id="presentation" className="section-spacing bg-white">
+    <section id="presentation" className="section-spacing section-warm relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-red-50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl opacity-30 pointer-events-none" />
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -25,7 +27,7 @@ export default function AboutSection() {
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-10 h-10 bg-red-50 rounded-lg">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm">
                       <Heart className="w-6 h-6 text-primary" />
                     </div>
                   </div>
@@ -38,7 +40,7 @@ export default function AboutSection() {
                 </div>
                 <div className="flex gap-4 items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-10 h-10 bg-red-50 rounded-lg">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm">
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                   </div>
@@ -55,16 +57,16 @@ export default function AboutSection() {
 
           {/* Right Image */}
           <ScrollReveal animation="animate-scaleIn" delay={0.2}>
-            <div className="relative rounded-lg overflow-hidden h-48 md:h-56 border border-border">
+            <div className="relative rounded-2xl overflow-hidden h-56 md:h-72 shadow-xl border border-border/50 group">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663714842432/WUSrQ9vSUBHuPmivm65SYf/patient-care-african-jb9EuPvwMAzKePKDhMNDX3.webp"
                 alt="Équipe médicale Priorité Santé"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-white text-lg font-semibold">Priorité Santé</p>
-                <p className="text-gray-200 text-sm">Ensemble pour votre santé</p>
+                <p className="text-white text-xl font-bold">Priorité Santé</p>
+                <p className="text-red-200 text-sm font-medium">Ensemble pour votre santé</p>
               </div>
             </div>
           </ScrollReveal>

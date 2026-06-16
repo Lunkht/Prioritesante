@@ -52,8 +52,8 @@ export default function MissionSection() {
               <div className="space-y-4">
                 <div className="flex gap-4 items-start hover-lift">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-10 h-10 bg-red-50 rounded-lg hover-scale transition-all duration-300">
-                      <Heart className="w-6 h-6 text-primary" />
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm transition-all duration-300 group-hover:from-primary group-hover:to-red-600 group-hover:shadow-md">
+                      <Heart className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                     </div>
                   </div>
                   <div>
@@ -64,10 +64,10 @@ export default function MissionSection() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-start group hover-lift">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-10 h-10 bg-red-50 rounded-lg">
-                      <Users className="w-6 h-6 text-primary" />
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm transition-all duration-300 group-hover:from-primary group-hover:to-red-600 group-hover:shadow-md">
+                      <Users className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                     </div>
                   </div>
                   <div>
@@ -78,10 +78,10 @@ export default function MissionSection() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-start group hover-lift">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-10 h-10 bg-red-50 rounded-lg">
-                      <Target className="w-6 h-6 text-primary" />
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm transition-all duration-300 group-hover:from-primary group-hover:to-red-600 group-hover:shadow-md">
+                      <Target className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                     </div>
                   </div>
                   <div>
@@ -100,17 +100,23 @@ export default function MissionSection() {
           <ScrollReveal animation="animate-scaleIn" delay={0.2}>
             <div className="flex flex-col gap-8">
               {/* Image */}
-              <div className="relative rounded-lg overflow-hidden h-64 md:h-80 border border-border">
+              <div className="relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-xl border border-border/50 group">
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663714842432/WUSrQ9vSUBHuPmivm65SYf/patient-care-african-jb9EuPvwMAzKePKDhMNDX3.webp"
                   alt="Moment de soin patient africain"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
 
-              {/* Donation Form */}
-              <div id="donate" className="bg-white border border-border rounded-lg p-6">
-                <h3 className="text-xl font-bold text-foreground mb-4">Faire un Don</h3>
+               {/* Donation Form */}
+              <div id="donate" className="bg-white border border-border/50 rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-red-50 to-red-100 rounded-xl flex items-center justify-center">
+                    <Heart className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">Faire un Don</h3>
+                </div>
                 <p className="text-sm text-muted-foreground mb-6">
                   Votre contribution nous aide à continuer notre mission. Chaque don compte.
                 </p>
@@ -130,10 +136,10 @@ export default function MissionSection() {
                             setSelectedAmount(amount);
                             setCustomAmount('');
                           }}
-                          className={`py-2 px-3 rounded-md font-semibold transition-all duration-200 text-xs ${
+                          className={`py-2.5 px-3 rounded-xl font-semibold transition-all duration-200 text-xs shadow-sm ${
                             selectedAmount === amount && !customAmount
-                              ? 'bg-primary text-white'
-                              : 'border border-border text-foreground hover:border-primary'
+                              ? 'bg-primary text-white shadow-md'
+                              : 'border border-border text-foreground hover:border-primary hover:bg-red-50'
                           }`}
                         >
                           {(amount / 1000).toFixed(0)}K

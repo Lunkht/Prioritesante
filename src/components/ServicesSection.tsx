@@ -108,7 +108,8 @@ const ADDITIONAL_SERVICES: Service[] = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="section-spacing bg-white">
+    <section id="services" className="section-spacing bg-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-red-50/10 via-transparent to-transparent pointer-events-none" />
       <div className="container">
         <div className="flex flex-col gap-16">
           <ScrollReveal animation="animate-slideInUp">
@@ -127,7 +128,7 @@ export default function ServicesSection() {
               <ScrollReveal key={service.id} animation="animate-slideInUp" delay={index * 0.1}>
                 <div className="service-card group hover-lift">
                   {/* Icon */}
-                  <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-lg mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 hover-scale">
+                  <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl mb-4 group-hover:from-primary group-hover:to-red-600 group-hover:text-white transition-all duration-300 shadow-sm">
                     <div className="text-primary group-hover:text-white transition-colors duration-300">
                       {service.icon}
                     </div>
@@ -152,7 +153,7 @@ export default function ServicesSection() {
                   </ul>
 
                   {/* CTA */}
-                  <button className="mt-6 w-full py-2 px-4 border border-primary text-primary rounded-md text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover-scale">
+                  <button className="mt-6 w-full py-2.5 px-4 border-2 border-primary/20 text-primary rounded-xl text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 hover:shadow-md">
                     En savoir plus
                   </button>
                 </div>
@@ -174,37 +175,37 @@ export default function ServicesSection() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {ADDITIONAL_SERVICES.map((service, index) => (
                   <ScrollReveal key={service.id} animation="animate-slideInUp" delay={index * 0.1}>
-                     <div className="service-card group hover-lift">
-                        {/* Icon */}
-                        <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-lg mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 hover-scale">
-                          <div className="text-primary group-hover:text-white transition-colors duration-300">
-                            {service.icon}
-                          </div>
-                        </div>
+                     <div className="service-card group">
+                         {/* Icon */}
+                         <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                           <div className="text-primary group-hover:text-white transition-colors duration-300">
+                             {service.icon}
+                           </div>
+                         </div>
 
-                        {/* Content */}
-                        <h4 className="text-lg font-bold text-foreground mb-2">
-                          {service.title}
-                        </h4>
-                        <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                          {service.description}
-                        </p>
+                         {/* Content */}
+                         <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                           {service.title}
+                         </h4>
+                         <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                           {service.description}
+                         </p>
 
-                        {/* Details */}
-                        <ul className="space-y-2">
-                          {service.details.map((detail, idx) => (
-                            <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                              {detail}
-                            </li>
-                          ))}
-                        </ul>
+                         {/* Details */}
+                         <ul className="space-y-2">
+                           {service.details.map((detail, idx) => (
+                             <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                               <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                               {detail}
+                             </li>
+                           ))}
+                         </ul>
 
-                        {/* CTA */}
-                        <button className="mt-6 w-full py-2 px-4 border border-primary text-primary rounded-md text-sm font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover-scale">
-                          En savoir plus
-                        </button>
-                      </div>
+                         {/* CTA */}
+                         <button className="mt-6 w-full py-2.5 px-4 border-2 border-primary/20 text-primary rounded-xl text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 hover:shadow-md">
+                           En savoir plus
+                         </button>
+                       </div>
                   </ScrollReveal>
                 ))}
               </div>

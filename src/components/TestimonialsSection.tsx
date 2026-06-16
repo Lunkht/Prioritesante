@@ -35,7 +35,8 @@ const TESTIMONIALS: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="section-spacing bg-gradient-to-b from-gray-50 to-white">
+    <section className="section-spacing bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-50/20 rounded-full blur-3xl pointer-events-none" />
       <div className="container">
         <div className="flex flex-col items-center gap-12">
           {/* Section Header */}
@@ -54,10 +55,10 @@ export default function TestimonialsSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((testimonial, index) => (
               <ScrollReveal key={testimonial.id} animation="animate-slideInUp" delay={index * 0.15}>
-                <div className="bg-white border border-border rounded-lg p-8 hover-lift relative">
+                <div className="bg-white border border-border/50 rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 relative shadow-md hover:shadow-xl">
                   {/* Quote Icon */}
                   <div className="absolute top-4 right-4 text-red-50">
-                    <Quote className="w-12 h-12" />
+                    <Quote className="w-14 h-14" />
                   </div>
 
                   {/* Stars */}
@@ -68,12 +69,12 @@ export default function TestimonialsSection() {
                   </div>
 
                   {/* Content */}
-                  <p className="text-muted-foreground mb-6 leading-relaxed relative z-10">
+                  <p className="text-muted-foreground mb-6 leading-relaxed relative z-10 text-sm md:text-base italic">
                     "{testimonial.content}"
                   </p>
 
                   {/* Author */}
-                  <div className="border-t border-border pt-4">
+                  <div className="border-t border-border/50 pt-4">
                     <p className="font-semibold text-foreground">{testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                   </div>

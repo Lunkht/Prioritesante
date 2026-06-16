@@ -43,10 +43,12 @@
 }
 
 :root {
-  /* Palette stricte : Rouge (action/médical), Blanc (pureté), Noir (professionnalisme) */
   --primary: #dc1414;
-  /* Rouge clinique vif */
+  --primary-light: #ff4d4d;
+  --primary-dark: #b01010;
   --primary-foreground: #FFFFFF;
+  --secondary-accent: #0d9488;
+  --secondary-accent-light: #14b8a6;
   --sidebar-primary: #dc1414;
   --sidebar-primary-foreground: #FFFFFF;
   --chart-1: #DC143C;
@@ -54,7 +56,7 @@
   --chart-3: #F1FAEE;
   --chart-4: #A8DADC;
   --chart-5: #457B9D;
-  --radius: 0.5rem;
+  --radius: 0.625rem;
   --background: #FFFFFF;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
@@ -64,19 +66,19 @@
   --secondary: #F5F5F5;
   --secondary-foreground: #1A1A1A;
   --muted: #E8E8E8;
-  --muted-foreground: #666666;
+  --muted-foreground: #717171;
   --accent: #DC143C;
   --accent-foreground: #FFFFFF;
   --destructive: #DC143C;
   --destructive-foreground: #FFFFFF;
-  --border: #E0E0E0;
-  --input: #F9F9F9;
+  --border: #E5E5E5;
+  --input: #FAFAFA;
   --ring: #DC143C;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #1A1A1A;
   --sidebar-accent: #DC143C;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #E0E0E0;
+  --sidebar-border: #E5E5E5;
   --sidebar-ring: #DC143C;
 }
 
@@ -224,21 +226,21 @@
 
   /* Boutons avec style médical épuré */
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-red-700 active:scale-95;
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700 hover:shadow-lg active:scale-95 shadow-sm;
   }
 
   .btn-secondary {
-    @apply border-2 border-foreground text-foreground px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:bg-muted active:scale-95;
+    @apply border-2 border-foreground text-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-muted hover:border-primary active:scale-95;
   }
 
   /* Cartes de services avec accent */
   .service-card {
-    @apply bg-white border border-border rounded-lg p-6 transition-all duration-300 hover:shadow-lg;
+    @apply bg-white border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-sm;
   }
 
   /* Cartes de cliniques */
   .clinic-card {
-    @apply bg-white border border-border rounded-lg p-6 transition-all duration-300 hover:shadow-lg;
+    @apply bg-white border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-sm;
   }
 
   /* Compteurs animés */
@@ -248,11 +250,11 @@
 
   /* Formulaires épurés */
   .form-input {
-    @apply w-full px-4 py-3 border border-border rounded-md bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200;
+    @apply w-full px-4 py-3 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/50 transition-all duration-200 shadow-sm;
   }
 
   .form-textarea {
-    @apply w-full px-4 py-3 border border-border rounded-md bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200 resize-none;
+    @apply w-full px-4 py-3 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/50 transition-all duration-200 resize-none shadow-sm;
   }
 
   /* Icônes minimalistes */
@@ -263,6 +265,20 @@
   /* Séparation subtile entre sections */
   .section-divider {
     @apply border-t border-border;
+  }
+
+  /* Badge pour étiquettes de services */
+  .badge {
+    @apply px-3 py-1 bg-red-50 text-primary text-xs rounded-full font-medium border border-red-100;
+  }
+
+  /* Section avec fond alterné */
+  .section-light {
+    @apply bg-gradient-to-b from-white via-red-50/20 to-white;
+  }
+
+  .section-warm {
+    @apply bg-gradient-to-b from-gray-50 via-red-50/10 to-gray-50;
   }
 }
 

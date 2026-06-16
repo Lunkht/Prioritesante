@@ -33,7 +33,7 @@ export default function HeroSection() {
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/50 to-black/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/50 pointer-events-none" />
 
       <div className="container relative z-10">
         <div className="max-w-2xl">
@@ -66,7 +66,7 @@ export default function HeroSection() {
               </div>
 
               {/* Trust indicators */}
-              <div className="flex flex-wrap gap-6 pt-8 text-sm text-gray-200 border-t border-white/20 pt-8">
+              <div className="flex flex-wrap gap-6 text-sm text-gray-200 border-t border-white/20 pt-8">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-red-400 rounded-full" />
                   <span>Certifié ONG</span>
@@ -87,4 +87,3 @@ export default function HeroSection() {
     </section>
     );
   }
-}
