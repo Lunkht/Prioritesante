@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((testimonial, index) => (
               <ScrollReveal key={testimonial.id} animation="animate-slideInUp" delay={index * 0.15}>
-                <div className="bg-white border border-border/50 rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 relative shadow-md hover:shadow-xl">
+                <div className="bg-white border border-border rounded-2xl p-8 relative">
                   {/* Quote Icon */}
                   <div className="absolute top-4 right-4 text-red-50">
                     <Quote className="w-14 h-14" />

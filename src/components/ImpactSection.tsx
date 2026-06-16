@@ -58,7 +58,7 @@ function AnimatedCounter({ value, label, suffix }: Counter) {
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center gap-3 p-8 bg-white rounded-2xl border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      className="flex flex-col items-center gap-3 p-8 bg-white rounded-2xl border border-border"
     >
       <div className="flex items-baseline gap-1">
         <span className="counter-value">{displayValue.toLocaleString('fr-FR')}</span>
@@ -128,7 +128,7 @@ export default function ImpactSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full pt-8">
             <ScrollReveal animation="animate-slideInUp" delay={0.1}>
               <div className="flex flex-col gap-3 text-center items-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center shadow-sm">
+                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
                   <Heart className="w-7 h-7 text-primary" />
                 </div>
                 <p className="text-sm font-semibold text-primary">ENGAGEMENT</p>
@@ -137,7 +137,7 @@ export default function ImpactSection() {
             </ScrollReveal>
             <ScrollReveal animation="animate-slideInUp" delay={0.2}>
               <div className="flex flex-col gap-3 text-center items-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center shadow-sm">
+                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
                   <Stethoscope className="w-7 h-7 text-primary" />
                 </div>
                 <p className="text-sm font-semibold text-primary">QUALITÉ</p>
@@ -146,7 +146,7 @@ export default function ImpactSection() {
             </ScrollReveal>
             <ScrollReveal animation="animate-slideInUp" delay={0.3}>
               <div className="flex flex-col gap-3 text-center items-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center shadow-sm">
+                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
                   <Clock className="w-7 h-7 text-primary" />
                 </div>
                 <p className="text-sm font-semibold text-primary">ACCESSIBILITÉ</p>

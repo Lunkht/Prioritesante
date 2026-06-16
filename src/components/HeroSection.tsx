@@ -38,7 +38,7 @@ export default function HeroSection() {
       <div className="container relative z-10">
         <div className="max-w-2xl">
           <ScrollReveal animation="animate-slideInUp">
-            <div className="flex flex-col gap-8 hover-lift">
+            <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Votre santé, notre seule <span className="text-red-400">priorité</span>

@@ -126,9 +126,9 @@ export default function ServicesSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service, index) => (
               <ScrollReveal key={service.id} animation="animate-slideInUp" delay={index * 0.1}>
-                <div className="service-card group hover-lift">
+                <div className="service-card group">
                   {/* Icon */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl mb-4 group-hover:from-primary group-hover:to-red-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                  <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-2xl mb-4 group-hover:bg-primary transition-all duration-300">
                     <div className="text-primary group-hover:text-white transition-colors duration-300">
                       {service.icon}
                     </div>
@@ -177,7 +177,7 @@ export default function ServicesSection() {
                   <ScrollReveal key={service.id} animation="animate-slideInUp" delay={index * 0.1}>
                      <div className="service-card group">
                          {/* Icon */}
-                         <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                         <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-xl mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                            <div className="text-primary group-hover:text-white transition-colors duration-300">
                              {service.icon}
                            </div>

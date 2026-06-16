@@ -52,8 +52,8 @@ export default function MissionSection() {
               <div className="space-y-4">
                 <div className="flex gap-4 items-start hover-lift">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm transition-all duration-300 group-hover:from-primary group-hover:to-red-600 group-hover:shadow-md">
-                      <Heart className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-xl">
+                      <Heart className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -64,10 +64,10 @@ export default function MissionSection() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-start group hover-lift">
+                <div className="flex gap-4 items-start group">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm transition-all duration-300 group-hover:from-primary group-hover:to-red-600 group-hover:shadow-md">
-                      <Users className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-xl">
+                      <Users className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -78,10 +78,10 @@ export default function MissionSection() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-start group hover-lift">
+                <div className="flex gap-4 items-start group">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-sm transition-all duration-300 group-hover:from-primary group-hover:to-red-600 group-hover:shadow-md">
-                      <Target className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-center justify-center w-12 h-12 bg-red-50 rounded-xl">
+                      <Target className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -110,9 +110,9 @@ export default function MissionSection() {
               </div>
 
                {/* Donation Form */}
-              <div id="donate" className="bg-white border border-border/50 rounded-2xl p-8 shadow-lg">
+               <div id="donate" className="bg-white border border-border rounded-2xl p-8">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-red-50 to-red-100 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
                     <Heart className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">Faire un Don</h3>

@@ -226,21 +226,21 @@
 
   /* Boutons avec style médical épuré */
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700 hover:shadow-lg active:scale-95 shadow-sm;
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700 active:scale-95;
   }
 
   .btn-secondary {
-    @apply border-2 border-foreground text-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-muted hover:border-primary active:scale-95;
+    @apply border-2 border-foreground text-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-muted active:scale-95;
   }
 
   /* Cartes de services avec accent */
   .service-card {
-    @apply bg-white border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-sm;
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/30;
   }
 
   /* Cartes de cliniques */
   .clinic-card {
-    @apply bg-white border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-sm;
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/30;
   }
 
   /* Compteurs animés */
@@ -250,11 +250,11 @@
 
   /* Formulaires épurés */
   .form-input {
-    @apply w-full px-4 py-3 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/50 transition-all duration-200 shadow-sm;
+    @apply w-full px-4 py-3 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/50 transition-all duration-200;
   }
 
   .form-textarea {
-    @apply w-full px-4 py-3 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/50 transition-all duration-200 resize-none shadow-sm;
+    @apply w-full px-4 py-3 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/50 transition-all duration-200 resize-none;
   }
 
   /* Icônes minimalistes */
