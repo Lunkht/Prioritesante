@@ -1,4 +1,4 @@
-import { Heart, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 /**
  * Footer Component - Minimalisme Médical Moderne
@@ -48,9 +48,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="flex flex-col gap-4 lg:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-md">
-                <Heart className="w-6 h-6 text-white" fill="white" />
-              </div>
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663714842432/WUSrQ9vSUBHuPmivm65SYf/logo-priorite-sante-aW8cQzGyWynNiXdvsZYwro.webp"
+                alt="Logo Priorité Santé"
+                className="w-10 h-10"
+              />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white">Priorité</span>
                 <span className="text-xs font-semibold text-red-300">Santé</span>
