@@ -1,13 +1,13 @@
 import ScrollReveal from './ScrollReveal';
 
 const PRACTITIONERS = [
-    { name: "Dr. Bérété Alpha", specialty: "Médecine Générale", role: "Directeur Médical", img: "https://i.pravatar.cc/300?u=dr-berete-alpha" },
-    { name: "Dr. Camara Fatoumata", specialty: "Pédiatrie", role: "Spécialiste", img: "https://i.pravatar.cc/300?u=dr-camara-fatoumata" },
-    { name: "Dr. Diallo Mamadou", specialty: "Urologie", role: "Spécialiste", img: "https://i.pravatar.cc/300?u=dr-diallo-mamadou" },
-    { name: "Dr. Keita Aminata", specialty: "Maternité & Gynécologie", role: "Spécialiste", img: "https://i.pravatar.cc/300?u=dr-keita-aminata" },
-    { name: "Dr. Sow Ibrahim", specialty: "Chirurgie Générale", role: "Spécialiste", img: "https://i.pravatar.cc/300?u=dr-sow-ibrahim" },
-    { name: "Dr. Barry Mariama", specialty: "Cardiologie", role: "Spécialiste", img: "https://i.pravatar.cc/300?u=dr-barry-mariama" },
-    { name: "Dr. Sylla Aboubacar", specialty: "Imagerie Médicale", role: "Spécialiste", img: "https://i.pravatar.cc/300?u=dr-sylla-aboubacar" },
+    { name: "Dr. Bérété Alpha", specialty: "Médecine Générale", role: "Directeur Médical", img: "https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" },
+    { name: "Dr. Camara Fatoumata", specialty: "Pédiatrie", role: "Spécialiste", img: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" },
+    { name: "Dr. Diallo Mamadou", specialty: "Urologie", role: "Spécialiste", img: "https://images.pexels.com/photos/7121620/pexels-photo-7121620.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" },
+    { name: "Dr. Keita Aminata", specialty: "Maternité & Gynécologie", role: "Spécialiste", img: "https://images.pexels.com/photos/5214995/pexels-photo-5214995.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" },
+    { name: "Dr. Sow Ibrahim", specialty: "Chirurgie Générale", role: "Spécialiste", img: "https://images.pexels.com/photos/6334099/pexels-photo-6334099.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" },
+    { name: "Dr. Barry Mariama", specialty: "Cardiologie", role: "Spécialiste", img: "https://images.pexels.com/photos/5214998/pexels-photo-5214998.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" },
+    { name: "Dr. Sylla Aboubacar", specialty: "Imagerie Médicale", role: "Spécialiste", img: "https://images.pexels.com/photos/7779820/pexels-photo-7779820.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" },
 ];
 
 export default function PractitionersSection() {
