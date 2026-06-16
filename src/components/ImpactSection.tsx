@@ -121,38 +121,38 @@ export default function ImpactSection() {
             ))}
           </div>
 
-          {/* Divider */}
-          <div className="w-full h-px bg-border my-4" />
-
-          {/* Additional info with Icons */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full pt-8">
-            <ScrollReveal animation="animate-slideInUp" delay={0.1}>
-              <div className="flex flex-col gap-3 text-center items-center">
-                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
-                  <Heart className="w-7 h-7 text-primary" />
+          {/* Additional info with Icons — fond noir */}
+          <div className="w-full bg-foreground rounded-3xl px-6 md:px-12 py-12 -mx-6 md:-mx-12">
+            <div className="w-full h-px bg-white/20 mb-10" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+              <ScrollReveal animation="animate-slideInUp" delay={0.1}>
+                <div className="flex flex-col gap-3 text-center items-center">
+                  <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center">
+                    <Heart className="w-7 h-7 text-red-400" />
+                  </div>
+                  <p className="text-sm font-semibold text-white">ENGAGEMENT</p>
+                  <p className="text-white/60">Soins gratuits ou à faible coût pour les plus démunis</p>
                 </div>
-                <p className="text-sm font-semibold text-primary">ENGAGEMENT</p>
-                <p className="text-muted-foreground">Soins gratuits ou à faible coût pour les plus démunis</p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal animation="animate-slideInUp" delay={0.2}>
-              <div className="flex flex-col gap-3 text-center items-center">
-                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
-                  <Stethoscope className="w-7 h-7 text-primary" />
+              </ScrollReveal>
+              <ScrollReveal animation="animate-slideInUp" delay={0.2}>
+                <div className="flex flex-col gap-3 text-center items-center">
+                  <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center">
+                    <Stethoscope className="w-7 h-7 text-red-400" />
+                  </div>
+                  <p className="text-sm font-semibold text-white">QUALITÉ</p>
+                  <p className="text-white/60">Équipe médicale qualifiée et équipements modernes</p>
                 </div>
-                <p className="text-sm font-semibold text-primary">QUALITÉ</p>
-                <p className="text-muted-foreground">Équipe médicale qualifiée et équipements modernes</p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal animation="animate-slideInUp" delay={0.3}>
-              <div className="flex flex-col gap-3 text-center items-center">
-                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
-                  <Clock className="w-7 h-7 text-primary" />
+              </ScrollReveal>
+              <ScrollReveal animation="animate-slideInUp" delay={0.3}>
+                <div className="flex flex-col gap-3 text-center items-center">
+                  <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center">
+                    <Clock className="w-7 h-7 text-red-400" />
+                  </div>
+                  <p className="text-sm font-semibold text-white">ACCESSIBILITÉ</p>
+                  <p className="text-white/60">Disponible 24h/24, 7j/7 pour les urgences</p>
                 </div>
-                <p className="text-sm font-semibold text-primary">ACCESSIBILITÉ</p>
-                <p className="text-muted-foreground">Disponible 24h/24, 7j/7 pour les urgences</p>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
           </div>
 
 
