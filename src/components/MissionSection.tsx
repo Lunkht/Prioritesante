@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Heart, Users, Target } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { sendEmail } from '../lib/emailjs';
 
 /**
  * Mission & Donation Section - Minimalisme Médical Moderne
@@ -16,19 +17,32 @@ export default function MissionSection() {
   const [customAmount, setCustomAmount] = useState('');
   const [donorName, setDonorName] = useState('');
   const [donorEmail, setDonorEmail] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const donationAmounts = [50000, 100000, 250000, 500000]; // GNF
 
-  const handleDonate = (e: React.FormEvent) => {
+  const handleDonate = async (e: React.FormEvent) => {
     e.preventDefault();
     const amount = customAmount ? parseFloat(customAmount) : selectedAmount;
-    if (amount && donorName && donorEmail) {
-      alert(`Merci pour votre don de ${amount} GNF ! Vous recevrez une confirmation à ${donorEmail}`);
-      // Reset form
+    if (!amount || !donorName || !donorEmail) return;
+
+    const result = await sendEmail({
+      templateId: import.meta.env.VITE_EMAILJS_DONATION_TEMPLATE_ID,
+      templateParams: {
+        name: donorName,
+        email: donorEmail,
+        amount: amount.toLocaleString('fr-FR'),
+        currency: 'GNF',
+      },
+    });
+
+    if (result.success) {
+      setIsSubmitted(true);
       setDonorName('');
       setDonorEmail('');
       setCustomAmount('');
       setSelectedAmount(50000);
+      setTimeout(() => setIsSubmitted(false), 4000);
     }
   };
 
@@ -194,6 +208,12 @@ export default function MissionSection() {
                   >
                     Faire un don maintenant
                   </button>
+
+                  {isSubmitted && (
+                    <div className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium animate-slideInUp">
+                      ✓ Don envoyé ! Vous recevrez un reçu par email.
+                    </div>
+                  )}
 
                   {/* Info */}
                   <p className="text-xs text-muted-foreground text-center">

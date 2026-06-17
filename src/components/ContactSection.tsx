@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MapPin, Phone, Clock, Mail } from 'lucide-react';
 import ClinicsMap from './ClinicsMap';
 import ScrollReveal from './ScrollReveal';
+import { sendEmail } from '../lib/emailjs';
 
 /**
  * Contact & Appointment Section - Minimalisme Médical Moderne
@@ -31,14 +32,25 @@ export default function ContactSection() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    if (!formData.name || !formData.email || !formData.message) return;
+
+    const result = await sendEmail({
+      templateId: import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID,
+      templateParams: {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      },
+    });
+
+    if (result.success) {
       setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      }, 3000);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 4000);
     }
   };
 
